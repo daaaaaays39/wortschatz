@@ -1,5 +1,5 @@
 // Wortschatz：オフラインで使うための保存係
-const CACHE = 'wortschatz-v1';
+const CACHE = 'wortschatz-v2';
 const FILES = ['./', './index.html', './manifest.json', './icon-180.png', './icon-512.png'];
 
 self.addEventListener('install', e => {

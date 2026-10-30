@@ -130,6 +130,99 @@ main{max-width:560px;margin:0 auto;padding:12px 18px calc(96px + env(safe-area-i
 .more{display:block;width:100%;margin-top:6px}
 .reset{display:block;margin:28px auto 0;border:none;background:none;color:var(--muted);text-decoration:underline;font-size:.85rem}
 
+/* modes */
+body[data-mode="home"] .top, body[data-mode="home"] .chips, body[data-mode="home"] #view, body[data-mode="home"] .tabs,
+body[data-mode="grammar"] .top, body[data-mode="grammar"] .chips, body[data-mode="grammar"] #view, body[data-mode="grammar"] .tabs { display:none }
+body:not([data-mode="home"]) #home, body:not([data-mode="grammar"]) #grammar { display:none }
+.home-btn{border:none;background:none;padding:6px 6px 6px 0;margin-right:2px;display:inline-flex;align-items:center;min-height:44px;color:var(--ink)}
+.top h1{display:flex;align-items:center}
+/* home */
+#home{max-width:560px;margin:0 auto;padding:36px 20px 40px;display:flex;flex-direction:column;gap:20px}
+.home-title{margin:0;font-family:"Literata",Georgia,serif;font-weight:600;font-size:2.4rem;letter-spacing:-.02em}
+.home-bars{display:flex;gap:6px;margin-top:6px}
+.home-bars span{width:22px;height:6px;border-radius:3px}
+.home-q{margin:8px 0 0;color:var(--muted)}
+.course{display:flex;flex-direction:column;gap:14px;width:100%;text-align:left;border-radius:22px;padding:22px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.course.dark{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.course .row1{display:flex;justify-content:space-between;align-items:center;font-family:"Literata",Georgia,serif;font-size:.95rem;opacity:.75}
+.course .name{font-size:1.6rem;font-weight:800;display:block}
+.course .desc{font-size:.9rem;opacity:.8;line-height:1.6;display:block;margin-top:2px}
+.course .pills{display:flex;gap:8px;flex-wrap:wrap}
+.course .pills span{font-size:.75rem;font-weight:700;border-radius:999px;padding:5px 10px;background:var(--bg);color:var(--ink)}
+.course.dark .pills span{background:rgba(127,127,127,.28);color:var(--bg)}
+.course .prog{display:flex;justify-content:space-between;font-size:.8rem;opacity:.85}
+.course .pbar{display:block;height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:6px}
+.course.dark .pbar{background:rgba(127,127,127,.35)}
+.course .pbar i{display:block;height:100%;background:var(--ink)}
+.course.dark .pbar i{background:var(--bg)}
+.home-note{text-align:center;color:var(--muted);font-size:.82rem;margin:0}
+/* grammar */
+#grammar{max-width:560px;margin:0 auto;padding:8px 20px 40px;display:flex;flex-direction:column;gap:16px}
+.g-back{align-self:flex-start;border:none;background:none;display:inline-flex;align-items:center;gap:4px;font-size:.95rem;min-height:44px;padding:0;color:var(--ink)}
+.g-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.g-head h1{margin:0;font-family:"Literata",Georgia,serif;font-weight:600;font-size:1.6rem}
+.g-head span{font-size:.82rem;color:var(--muted)}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:none;background:none;border-radius:999px;padding:7px 0;font-weight:700;font-size:.9rem;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.gbar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.gbar i{display:block;height:100%;background:var(--ink)}
+.next-card{background:var(--ink);color:var(--bg);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.next-card small{opacity:.8;font-size:.82rem}
+.next-card h2{margin:0;font-size:1.35rem}
+.next-card .de{font-size:1.15rem;margin:0}
+.next-card .btn{margin-top:6px;background:var(--bg);color:var(--ink);border:none}
+.unit{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;min-height:58px;color:var(--ink)}
+.unit .num{flex:none;width:28px;text-align:center;font-family:"Literata",Georgia,serif;font-weight:600;font-size:1.05rem;color:var(--muted)}
+.unit .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.unit .tx b{font-size:.95rem}
+.unit .tx span{font-family:"Literata",Georgia,serif;font-size:.88rem;color:var(--muted)}
+.mark{flex:none;min-width:30px;height:30px;border-radius:999px;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;padding:0 4px}
+.mark.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.soon{color:var(--muted);text-align:center;padding:30px 10px;background:var(--surface);border:1px dashed var(--line);border-radius:14px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.steps div{display:flex;flex-direction:column;gap:4px;font-size:.75rem;color:var(--muted)}
+.steps div i{height:4px;border-radius:2px;background:var(--line)}
+.steps div.on{color:var(--ink);font-weight:700}
+.steps div.on i{background:var(--ink)}
+.gcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.gcard h2{margin:0;font-size:1.1rem}
+.gcard p{margin:0;line-height:1.8}
+.hl{color:var(--der);font-weight:700}
+.tablewrap{border:1px solid var(--line);border-radius:12px;overflow-x:auto}
+.gtable{width:100%;border-collapse:collapse;font-size:.95rem}
+.gtable th{background:var(--bg);font-size:.78rem;color:var(--muted);font-weight:700;padding:8px;text-align:left;white-space:nowrap}
+.gtable td{border-top:1px solid var(--line);padding:9px 8px;font-family:"Literata",Georgia,serif}
+.gtable td:first-child{font-family:inherit;font-size:.85rem}
+.point{background:var(--ink);color:var(--bg);border-radius:12px;padding:14px 16px;line-height:1.7}
+.hints{margin:0;padding-left:1.2em;line-height:1.8;color:var(--muted);font-size:.92rem}
+.gex{display:flex;gap:10px;align-items:flex-start;padding-top:12px;border-top:1px solid var(--line)}
+.gcard h2 + .gex{border-top:none;padding-top:0}
+.gex .tx{flex:1}
+.gex .de{font-size:1.12rem;margin:0}
+.gex .ja2{font-size:.88rem;color:var(--muted);margin:2px 0 0}
+.round{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:1rem}
+.qbar{display:grid;gap:4px}
+.qbar i{height:6px;border-radius:3px;background:var(--line)}
+.qbar i.ok{background:var(--ok)} .qbar i.ng{background:var(--ng)} .qbar i.cur{background:var(--ink)}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:flex;flex-direction:column;gap:8px}
+.qcard .lead{font-size:.82rem;color:var(--muted)}
+.qcard .qde{margin:0;font-size:1.5rem;line-height:1.5;overflow-wrap:anywhere}
+.blank{display:inline-block;min-width:80px;border-bottom:2.5px solid var(--der);text-align:center;color:var(--der);font-weight:600}
+.qchoices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.qchoices.long{grid-template-columns:1fr}
+.qc{min-height:56px;border-radius:14px;border:2px solid var(--line);background:var(--surface);font-family:"Literata",Georgia,serif;font-size:1.15rem;font-weight:600;color:var(--ink);padding:8px}
+.qchoices.long .qc{font-size:1.02rem;text-align:left;padding:12px 14px}
+.qc.ok{border-color:var(--ok);background:var(--das-soft)}
+.qc.ng{border-color:var(--ng);background:var(--die-soft);text-decoration:line-through}
+.qc:disabled:not(.ok):not(.ng){opacity:.45}
+.fb ol{margin:0;padding-left:1.3em;line-height:1.8}
+.fb .ttl{font-weight:800;font-size:1.02rem}
+.fb .ttl.ok{color:var(--ok)} .fb .ttl.ng{color:var(--ng)}
+.result{text-align:center;align-items:center}
+.result .big{font-family:"Literata",Georgia,serif;font-size:3rem;font-weight:600;margin:0}
+
+/* tabs */
 .tabs{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom,0px)}
 .tab{border:none;background:none;padding:10px 4px 12px;font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:2px}
 .tab b{font-family:"Literata",Georgia,serif;font-size:1.05rem;font-weight:600;line-height:1.3}
@@ -137,10 +230,12 @@ main{max-width:560px;margin:0 auto;padding:12px 18px calc(96px + env(safe-area-i
 .tab[aria-current="page"] b{color:var(--der)}
 </style>
 </head>
-<body>
+<body data-mode="home">
+<section id="home"></section>
+<section id="grammar"></section>
 <header class="top">
   <div class="top-row">
-    <h1>Wortschatz</h1>
+    <h1><button class="home-btn" data-action="goHome" aria-label="コース選択に戻る"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>Wortschatz</h1>
     <span class="ptext" id="ptext"></span>
   </div>
   <div class="levels" id="levels" role="group" aria-label="レベル"></div>
@@ -168,6 +263,330 @@ const KIND = {v:'動詞', a:'形容詞・副詞', o:'その他'};
 const G_NAME = {der:'男性名詞', die:'女性名詞', das:'中性名詞', pl:'複数形のみの名詞'};
 const isArt = g => g === 'der' || g === 'die' || g === 'das';
 const key = w => w.p + '|' + w.de;
+
+// 文法コース A1（説明・例文・練習問題）
+// 例文の <b class="hl">…</b> は強調、q の ___ は空欄
+const GRAMMAR = [
+{
+  id:'a1-01', lv:'a1', n:1, title:'動詞の変化', ex:'ich lerne / du lernst',
+  intro:[
+    'ドイツ語の動詞は、<b>だれが</b>するかによって、うしろの部分（語尾）が変わります。英語の「he play<b>s</b>」の s を、全員分つけるイメージです。',
+    '辞書に載っている形（lernen）から <b>-en</b> を取った部分（lern-）に、主語に合わせた語尾をつけます。'
+  ],
+  table:{head:['主語','語尾','lernen（学ぶ）'], rows:[
+    ['ich（私）','-e','ich lern<b class="hl">e</b>'],
+    ['du（君）','-st','du lern<b class="hl">st</b>'],
+    ['er / sie / es','-t','er lern<b class="hl">t</b>'],
+    ['wir（私たち）','-en','wir lern<b class="hl">en</b>'],
+    ['ihr（君たち）','-t','ihr lern<b class="hl">t</b>'],
+    ['sie / Sie','-en','sie lern<b class="hl">en</b>']
+  ]},
+  point:'まず <b>ich -e／du -st／er -t</b> の3つを覚えましょう。wir と sie/Sie は辞書の形と同じです。',
+  examples:[
+    {de:'Ich lern<b class="hl">e</b> Deutsch.', say:'Ich lerne Deutsch.', ja:'私はドイツ語を学んでいます。'},
+    {de:'Du wohn<b class="hl">st</b> in Tokio.', say:'Du wohnst in Tokio.', ja:'君は東京に住んでいる。'},
+    {de:'Sie arbeit<b class="hl">et</b> viel.', say:'Sie arbeitet viel.', ja:'彼女はたくさん働く。（arbeit- のように t で終わる時は e をはさむ）'}
+  ],
+  questions:[
+    {q:'Du ___ Deutsch.', hint:'lernen', ja:'君はドイツ語を学ぶ。', choices:['lerne','lernst','lernt'], a:'lernst', why:['主語は du（君）','du の語尾は -st','lern + st → lernst']},
+    {q:'Wir ___ in Tokio.', hint:'wohnen', ja:'私たちは東京に住んでいる。', choices:['wohnt','wohnen','wohnst'], a:'wohnen', why:['主語は wir（私たち）','wir は辞書の形と同じ -en','→ wohnen']},
+    {q:'Er ___ Fußball.', hint:'spielen', ja:'彼はサッカーをする。', choices:['spiele','spielen','spielt'], a:'spielt', why:['主語は er（彼）','er の語尾は -t','spiel + t → spielt']},
+    {q:'Ich ___ Kaffee.', hint:'trinken', ja:'私はコーヒーを飲む。', choices:['trinke','trinkst','trinkt'], a:'trinke', why:['主語は ich（私）','ich の語尾は -e','trink + e → trinke']},
+    {q:'Ihr ___ sehr gut.', hint:'kochen', ja:'君たちは料理がとても上手だ。', choices:['kochen','kocht','kochst'], a:'kocht', why:['主語は ihr（君たち）','ihr の語尾は er と同じ -t','koch + t → kocht']},
+    {q:'Sie ___ aus Japan.', hint:'kommen（あなたは）', ja:'あなたは日本の出身です。', choices:['kommt','kommen','kommst'], a:'kommen', why:['大文字の Sie は「あなた」','Sie は辞書の形と同じ -en','→ kommen']},
+    {q:'Anna ___ gern Musik.', hint:'hören', ja:'アンナは音楽を聴くのが好きだ。', choices:['hört','hören','hörst'], a:'hört', why:['Anna は「彼女」= sie と同じ','sie（彼女）の語尾は -t','hör + t → hört']},
+    {q:'Du ___ viel.', hint:'arbeiten', ja:'君はたくさん働く。', choices:['arbeitst','arbeitest','arbeitet'], a:'arbeitest', why:['主語は du なので -st','arbeit- は t で終わるので、発音しやすく e をはさむ','arbeit + e + st → arbeitest']}
+  ]
+},
+{
+  id:'a1-02', lv:'a1', n:2, title:'sein と haben', ex:'Ich bin müde.',
+  intro:[
+    '<b>sein</b>（〜である・いる）と <b>haben</b>（持っている）は、いちばんよく使う動詞です。',
+    'ただし、第1課のきまりどおりには変化しない「不規則な動詞」です。使う回数がとても多いので、表ごと丸暗記してしまうのが近道です。'
+  ],
+  table:{head:['主語','sein','haben'], rows:[
+    ['ich','<b class="hl">bin</b>','habe'],
+    ['du','<b class="hl">bist</b>','<b class="hl">hast</b>'],
+    ['er / sie / es','<b class="hl">ist</b>','<b class="hl">hat</b>'],
+    ['wir','<b class="hl">sind</b>','haben'],
+    ['ihr','<b class="hl">seid</b>','habt'],
+    ['sie / Sie','<b class="hl">sind</b>','haben']
+  ]},
+  point:'sein は全部が特別な形。haben は <b>du hast／er hat</b> の2つだけが特別です（habst・habt にはなりません）。',
+  examples:[
+    {de:'Ich <b class="hl">bin</b> müde.', say:'Ich bin müde.', ja:'私は疲れています。'},
+    {de:'Wir <b class="hl">sind</b> Freunde.', say:'Wir sind Freunde.', ja:'私たちは友達です。'},
+    {de:'Er <b class="hl">hat</b> zwei Kinder.', say:'Er hat zwei Kinder.', ja:'彼には子どもが2人いる。'}
+  ],
+  questions:[
+    {q:'Ich ___ müde.', ja:'私は疲れている。', choices:['bin','bist','ist'], a:'bin', why:['「疲れている」は sein を使う','ich の sein は bin']},
+    {q:'Du ___ Hunger.', ja:'君はおなかがすいている。', choices:['habe','hast','hat'], a:'hast', why:['Hunger haben で「おなかがすいている」','du の haben は特別な形 hast']},
+    {q:'Wir ___ Studenten.', ja:'私たちは大学生です。', choices:['sind','seid','ist'], a:'sind', why:['「〜です」は sein','wir の sein は sind']},
+    {q:'Er ___ ein Auto.', ja:'彼は車を持っている。', choices:['habt','hat','hast'], a:'hat', why:['「持っている」は haben','er の haben は特別な形 hat']},
+    {q:'Ihr ___ sehr nett.', ja:'君たちはとても親切だ。', choices:['sind','seid','sein'], a:'seid', why:['「〜だ」は sein','ihr の sein は seid（sind ではない）']},
+    {q:'Sie ___ zwei Kinder.', hint:'彼女は', ja:'彼女には子どもが2人いる。', choices:['hat','haben','habt'], a:'hat', why:['小文字の sie で「彼女は」','彼女（sie）の haben は er と同じ hat']},
+    {q:'Das ___ mein Bruder.', ja:'こちらは私の兄です。', choices:['bin','ist','sind'], a:'ist', why:['das（これ・こちら）は er/sie/es と同じ扱い','→ ist']},
+    {q:'Habt ihr Zeit? – Ja, wir ___ Zeit.', ja:'時間ある？―うん、あるよ。', choices:['habt','haben','hat'], a:'haben', why:['答えの主語は wir','wir の haben は辞書の形と同じ haben']}
+  ]
+},
+{
+  id:'a1-03', lv:'a1', n:3, title:'名詞の性と冠詞', ex:'der / die / das',
+  intro:[
+    'ドイツ語の名詞には、すべて<b>性</b>があります。男性・女性・中性の3つで、名詞の前につく「冠詞」で見分けます。',
+    '性は意味と関係ないことが多いのが難しいところです。たとえば「女の子」は <b>das</b> Mädchen（中性）です。'
+  ],
+  table:{head:['','男性','女性','中性','複数'], rows:[
+    ['その（定冠詞）','<span class="c-der">der</span>','<span class="c-die">die</span>','<span class="c-das">das</span>','die'],
+    ['ある（不定冠詞）','<span class="c-der">ein</span>','<span class="c-die">eine</span>','<span class="c-das">ein</span>','―']
+  ]},
+  point:'名詞は必ず <b>冠詞とセット</b>で覚えましょう（Tisch ではなく der Tisch）。複数形はいつも die です。',
+  hints:['-ung / -heit / -keit で終わる → die（die Zeitung）','-chen / -lein で終わる → das（das Brötchen）','男の人を表す言葉 → der（der Vater）'],
+  examples:[
+    {de:'<span class="c-der">der</span> Tisch – <span class="c-der">ein</span> Tisch', say:'der Tisch, ein Tisch', ja:'そのテーブル／あるテーブル'},
+    {de:'<span class="c-die">die</span> Lampe – <span class="c-die">eine</span> Lampe', say:'die Lampe, eine Lampe', ja:'そのランプ／あるランプ'},
+    {de:'<span class="c-das">das</span> Kind – <span class="c-das">ein</span> Kind', say:'das Kind, ein Kind', ja:'その子ども／ある子ども'}
+  ],
+  questions:[
+    {q:'___ Tisch', ja:'テーブル', choices:['der','die','das'], a:'der', why:['Tisch は男性名詞','→ der Tisch']},
+    {q:'___ Zeitung', ja:'新聞', choices:['der','die','das'], a:'die', why:['-ung で終わる名詞は、ほぼ必ず女性','→ die Zeitung']},
+    {q:'___ Kind', ja:'子ども', choices:['der','die','das'], a:'das', why:['Kind は中性名詞','→ das Kind']},
+    {q:'___ Mädchen', ja:'女の子', choices:['der','die','das'], a:'das', why:['-chen で終わる名詞は必ず中性','意味は女の子でも → das Mädchen']},
+    {q:'___ Vater', ja:'父', choices:['der','die','das'], a:'der', why:['男の人を表す名詞は男性','→ der Vater']},
+    {q:'___ Lampe', ja:'ランプ', choices:['der','die','das'], a:'die', why:['-e で終わる名詞は女性が多い','→ die Lampe']},
+    {q:'Das ist ___ Brötchen.', ja:'これは小型パンです。', choices:['ein','eine','einen'], a:'ein', why:['-chen で終わるので中性（das Brötchen）','中性の「ある」は ein']},
+    {q:'___ Kinder spielen.', ja:'子どもたちが遊んでいる。', choices:['Der','Die','Das'], a:'Die', why:['Kinder は Kind の複数形','複数形の冠詞はいつも die']}
+  ]
+},
+{
+  id:'a1-04', lv:'a1', n:4, title:'1格と4格', ex:'Ich habe einen Hund.',
+  intro:[
+    '日本語は「犬<b>が</b>」「犬<b>を</b>」のように、うしろに付く「が・を」で役割を表します。ドイツ語では、そのかわりに<b>冠詞の形</b>が変わります。',
+    '「〜が」（主語）の形を<b>1格</b>、「〜を」（動詞の目的語）の形を<b>4格</b>と呼びます。'
+  ],
+  table:{head:['','男性','女性','中性'], rows:[
+    ['1格（が）','der / ein','die / eine','das / ein'],
+    ['4格（を）','<b class="hl">den / einen</b>','die / eine','das / ein']
+  ]},
+  point:'覚えるのはここだけ：形が変わるのは<b>男性名詞</b>だけ。der → <b>den</b>、ein → <b>einen</b> になります。',
+  examples:[
+    {de:'<b class="hl">Der</b> Hund schläft.', say:'Der Hund schläft.', ja:'犬<b>が</b>寝ている。（1格）'},
+    {de:'Ich habe <b class="hl">einen</b> Hund.', say:'Ich habe einen Hund.', ja:'私は犬<b>を</b>飼っている。（4格）'},
+    {de:'Ich habe <span class="c-das">ein</span> Auto.', say:'Ich habe ein Auto.', ja:'車<b>を</b>持っている。中性なので形は変わらない。'}
+  ],
+  questions:[
+    {q:'Ich kaufe ___ Apfel.', ja:'りんごを1つ買う。', choices:['ein','einen','eine'], a:'einen', why:['Apfel は男性名詞（der Apfel）','「りんご<b>を</b>買う」なので4格','男性の4格は ein → einen']},
+    {q:'___ Hund schläft.', ja:'その犬が寝ている。', choices:['Der','Den','Das'], a:'Der', why:['「犬<b>が</b>」なので1格（主語）','男性の1格は der のまま']},
+    {q:'Ich sehe ___ Mann.', ja:'その男性が見える。', choices:['der','den','das'], a:'den', why:['Mann は男性名詞','「男性<b>を</b>見る」なので4格','der → den']},
+    {q:'Wir haben ___ Katze.', ja:'私たちは猫を飼っている。', choices:['ein','einen','eine'], a:'eine', why:['Katze は女性名詞（die Katze）','女性は4格でも形が変わらない','→ eine']},
+    {q:'Er liest ___ Buch.', ja:'彼は本を読んでいる。', choices:['ein','einen','eine'], a:'ein', why:['Buch は中性名詞（das Buch）','中性は4格でも形が変わらない','→ ein']},
+    {q:'___ Lehrer ist nett.', ja:'その先生は親切だ。', choices:['Der','Den','Die'], a:'Der', why:['「先生<b>が</b>」なので1格','男性の1格は der']},
+    {q:'Ich brauche ___ Tisch.', ja:'テーブルが1つ必要だ。', choices:['ein','einen','eine'], a:'einen', why:['Tisch は男性名詞','brauchen（必要とする）の目的語なので4格','→ einen']},
+    {q:'Sie trinkt ___ Tee.', ja:'彼女はお茶を飲む。', choices:['der','den','die'], a:'den', why:['Tee は男性名詞（der Tee）','「お茶<b>を</b>飲む」なので4格','der → den']}
+  ]
+},
+{
+  id:'a1-05', lv:'a1', n:5, title:'否定 nicht と kein', ex:'Ich habe kein Auto.',
+  intro:[
+    '「〜ない」は2種類あります。<b>kein</b> は「ひとつも〜ない」で、名詞を打ち消します。<b>nicht</b> はそれ以外（動詞・形容詞など）を打ち消します。',
+    '見分け方：肯定の文で名詞の前に <b>ein</b> がある、または冠詞がない名詞なら <b>kein</b>。それ以外は <b>nicht</b> です。'
+  ],
+  table:{head:['肯定','否定'], rows:[
+    ['Ich habe <b>ein</b> Auto.','Ich habe <b class="hl">kein</b> Auto.'],
+    ['Ich habe Zeit.','Ich habe <b class="hl">keine</b> Zeit.'],
+    ['Das ist teuer.','Das ist <b class="hl">nicht</b> teuer.'],
+    ['Er kommt.','Er kommt <b class="hl">nicht</b>.']
+  ]},
+  point:'kein の語尾は ein と同じ変化です。女性は <b>keine</b>、男性の4格は <b>keinen</b>。',
+  examples:[
+    {de:'Ich habe <b class="hl">keinen</b> Hunger.', say:'Ich habe keinen Hunger.', ja:'おなかはすいていません。（der Hunger → 4格 keinen）'},
+    {de:'Das Wetter ist <b class="hl">nicht</b> schön.', say:'Das Wetter ist nicht schön.', ja:'天気はよくない。'},
+    {de:'Er trinkt <b class="hl">keinen</b> Kaffee.', say:'Er trinkt keinen Kaffee.', ja:'彼はコーヒーを飲まない。'}
+  ],
+  questions:[
+    {q:'Ich habe ___ Auto.', ja:'私は車を持っていない。', choices:['nicht','kein','keine'], a:'kein', why:['名詞 Auto を打ち消すので kein','Auto は中性 → kein']},
+    {q:'Das ist ___ teuer.', ja:'それは高くない。', choices:['nicht','kein','keine'], a:'nicht', why:['打ち消すのは形容詞 teuer','名詞ではないので nicht']},
+    {q:'Ich habe ___ Zeit.', ja:'時間がない。', choices:['nicht','kein','keine'], a:'keine', why:['冠詞のない名詞 Zeit を打ち消すので kein','Zeit は女性 → keine']},
+    {q:'Er kommt heute ___.', ja:'彼は今日来ない。', choices:['nicht','kein','keinen'], a:'nicht', why:['打ち消すのは動詞 kommen','→ nicht']},
+    {q:'Wir haben ___ Hund.', ja:'私たちは犬を飼っていない。', choices:['kein','keinen','nicht'], a:'keinen', why:['名詞 Hund を打ち消すので kein','Hund は男性で、haben の目的語（4格）','→ keinen']},
+    {q:'Ich trinke ___ Kaffee.', ja:'私はコーヒーを飲まない。', choices:['kein','keinen','nicht'], a:'keinen', why:['冠詞のない名詞 Kaffee → kein','男性の4格 → keinen']},
+    {q:'Der Film ist ___ gut.', ja:'その映画はよくない。', choices:['kein','keine','nicht'], a:'nicht', why:['打ち消すのは形容詞 gut','→ nicht']},
+    {q:'Das ist ___ Problem.', ja:'それは問題ないよ。', choices:['nicht','kein','keine'], a:'kein', why:['名詞 Problem を打ち消す','das Problem（中性）→ kein']}
+  ]
+},
+{
+  id:'a1-06', lv:'a1', n:6, title:'語順（動詞は2番目）', ex:'Heute lerne ich.',
+  intro:[
+    'ドイツ語のふつうの文には、大切なルールがひとつあります。<b>動詞はいつも2番目</b>です。',
+    '「今日」や「月曜日に」など、主語以外のことばを文の最初に置くと、動詞は2番目に残ったまま、<b>主語が動詞のうしろ</b>に回ります。'
+  ],
+  table:{head:['1番目','2番目（動詞）','その後'], rows:[
+    ['Ich','<b class="hl">lerne</b>','heute Deutsch.'],
+    ['Heute','<b class="hl">lerne</b>','ich Deutsch.'],
+    ['Am Montag','<b class="hl">arbeite</b>','ich.']
+  ]},
+  point:'「1番目」は1語とは限りません。Am Montag（月曜日に）のようなかたまりで1つと数えます。',
+  examples:[
+    {de:'Heute <b class="hl">lerne</b> ich Deutsch.', say:'Heute lerne ich Deutsch.', ja:'今日、私はドイツ語を勉強する。'},
+    {de:'Am Wochenende <b class="hl">schlafe</b> ich lange.', say:'Am Wochenende schlafe ich lange.', ja:'週末は長く寝ます。'},
+    {de:'Dann <b class="hl">trinken</b> wir Kaffee.', say:'Dann trinken wir Kaffee.', ja:'それから私たちはコーヒーを飲む。'}
+  ],
+  questions:[
+    {q:'正しい文はどれ？', ja:'今日、私はドイツ語を勉強する。', choices:['Heute lerne ich Deutsch.','Heute ich lerne Deutsch.','Heute lerne Deutsch ich.'], a:'Heute lerne ich Deutsch.', why:['1番目は heute','動詞 lerne は2番目','主語 ich は動詞のすぐあと'], long:true},
+    {q:'正しい文はどれ？', ja:'月曜日に私は働く。', choices:['Am Montag ich arbeite.','Am Montag arbeite ich.','Ich am Montag arbeite.'], a:'Am Montag arbeite ich.', why:['Am Montag で1つのかたまり（1番目）','動詞 arbeite は2番目'], long:true},
+    {q:'正しい文はどれ？', ja:'明日、私たちはベルリンへ行く。', choices:['Morgen wir fahren nach Berlin.','Morgen fahren wir nach Berlin.','Wir morgen fahren nach Berlin.'], a:'Morgen fahren wir nach Berlin.', why:['1番目は morgen','動詞 fahren が2番目、そのあと主語 wir'], long:true},
+    {q:'正しい文はどれ？', ja:'夏、私は泳ぐのが好きだ。', choices:['Im Sommer schwimme ich gern.','Im Sommer ich schwimme gern.','Im Sommer gern ich schwimme.'], a:'Im Sommer schwimme ich gern.', why:['Im Sommer で1つのかたまり','動詞 schwimme は2番目'], long:true},
+    {q:'正しい文はどれ？', ja:'私は今日映画館に行く。', choices:['Ich heute gehe ins Kino.','Ich gehe heute ins Kino.','Heute ich gehe ins Kino.'], a:'Ich gehe heute ins Kino.', why:['1番目は主語 ich','動詞 gehe は2番目'], long:true},
+    {q:'正しい文はどれ？', ja:'今、私は時間がある。', choices:['Jetzt habe ich Zeit.','Jetzt ich habe Zeit.','Ich jetzt habe Zeit.'], a:'Jetzt habe ich Zeit.', why:['1番目は jetzt','動詞 habe が2番目、主語 ich がそのあと'], long:true},
+    {q:'正しい文はどれ？', ja:'8時に講座が始まる。', choices:['Um acht Uhr der Kurs beginnt.','Um acht Uhr beginnt der Kurs.','Der Kurs um acht Uhr beginnt.'], a:'Um acht Uhr beginnt der Kurs.', why:['Um acht Uhr で1つのかたまり','動詞 beginnt は2番目、主語 der Kurs はそのあと'], long:true},
+    {q:'Am Abend ___ ich fern.', ja:'夜、私はテレビを見る。', choices:['sehe','ich sehe','sehen'], a:'sehe', why:['空欄は2番目の位置','ここには動詞が入る','ich はすでに動詞のうしろにある']}
+  ]
+},
+{
+  id:'a1-07', lv:'a1', n:7, title:'疑問文', ex:'Wo wohnst du?',
+  intro:[
+    '疑問文は2種類あります。「どこ？」「いつ？」と聞く文は、<b>疑問詞＋動詞＋主語</b>の順です（動詞は2番目のまま）。',
+    '「はい・いいえ」で答える文は、<b>動詞を文の最初</b>に出します。英語のように do を使う必要はありません。'
+  ],
+  table:{head:['疑問詞','意味'], rows:[
+    ['wer','だれ'],['was','何'],['wo','どこで'],['woher','どこから'],['wohin','どこへ'],['wann','いつ'],['wie','どのように'],['warum','なぜ']
+  ]},
+  point:'wo（どこで）・woher（どこから）・wohin（どこへ）の使い分けに注意。行き先を聞く時は wohin です。',
+  examples:[
+    {de:'<b class="hl">Wo</b> wohnst du?', say:'Wo wohnst du?', ja:'どこに住んでるの？'},
+    {de:'<b class="hl">Woher</b> kommen Sie?', say:'Woher kommen Sie?', ja:'どちらのご出身ですか？'},
+    {de:'<b class="hl">Sprichst</b> du Deutsch?', say:'Sprichst du Deutsch?', ja:'ドイツ語を話せる？（動詞が最初）'}
+  ],
+  questions:[
+    {q:'___ wohnst du? – In Tokio.', ja:'どこに住んでるの？―東京だよ。', choices:['Wo','Wer','Wann'], a:'Wo', why:['答えが場所（東京で）','場所を聞くのは wo']},
+    {q:'___ kommst du? – Aus Japan.', ja:'どこから来たの？―日本から。', choices:['Wo','Woher','Wohin'], a:'Woher', why:['答えが aus Japan（日本から）','出身・出発点を聞くのは woher']},
+    {q:'___ ist das? – Das ist mein Bruder.', ja:'こちらは誰？―兄です。', choices:['Was','Wer','Wie'], a:'Wer', why:['答えが人','人を聞くのは wer']},
+    {q:'___ beginnt der Film? – Um acht.', ja:'映画はいつ始まるの？―8時。', choices:['Wann','Wo','Was'], a:'Wann', why:['答えが時刻','時間を聞くのは wann']},
+    {q:'___ heißt du? – Yuki.', ja:'名前は？―ユキです。', choices:['Was','Wie','Wer'], a:'Wie', why:['heißen は「〜という名前だ」','「どのように呼ばれる？」なので wie（Was ではない）']},
+    {q:'___ trinkst du? – Tee.', ja:'何を飲む？―お茶。', choices:['Was','Wer','Wie'], a:'Was', why:['答えが物','物を聞くのは was']},
+    {q:'___ fährst du? – Nach Wien.', ja:'どこへ行くの？―ウィーンへ。', choices:['Wo','Woher','Wohin'], a:'Wohin', why:['答えが nach Wien（ウィーンへ）','行き先を聞くのは wohin']},
+    {q:'正しい文はどれ？', ja:'ドイツ語を話せる？', choices:['Sprichst du Deutsch?','Du Deutsch sprichst?','Sprichst Deutsch du?'], a:'Sprichst du Deutsch?', why:['はい・いいえで答える質問','動詞 sprichst を最初に、そのあと主語 du'], long:true}
+  ]
+},
+{
+  id:'a1-08', lv:'a1', n:8, title:'分離動詞', ex:'Ich stehe um 7 auf.',
+  intro:[
+    'aufstehen（起きる）のように、前に小さな部分（前つづり）がついた動詞があります。文の中では、この前つづりが<b>はなれて文の最後</b>に行きます。',
+    '動詞の本体（stehe）はいつもどおり2番目。前つづり（auf）は文の最後に置きます。'
+  ],
+  table:{head:['辞書の形','文の中'], rows:[
+    ['<b class="hl">auf</b>stehen（起きる）','Ich stehe um 7 Uhr <b class="hl">auf</b>.'],
+    ['<b class="hl">ein</b>kaufen（買い物する）','Wir kaufen heute <b class="hl">ein</b>.'],
+    ['<b class="hl">an</b>rufen（電話する）','Ich rufe dich <b class="hl">an</b>.'],
+    ['<b class="hl">fern</b>sehen（テレビを見る）','Er sieht <b class="hl">fern</b>.']
+  ]},
+  point:'辞書で動詞を引く時は、文の最後にある前つづりを前にくっつけて探しましょう（stehe … auf → aufstehen）。',
+  examples:[
+    {de:'Ich stehe um sieben Uhr <b class="hl">auf</b>.', say:'Ich stehe um sieben Uhr auf.', ja:'私は7時に起きる。'},
+    {de:'Der Zug fährt um zehn Uhr <b class="hl">ab</b>.', say:'Der Zug fährt um zehn Uhr ab.', ja:'電車は10時に出発する。'},
+    {de:'Am Samstag kaufe ich <b class="hl">ein</b>.', say:'Am Samstag kaufe ich ein.', ja:'土曜日に買い物をします。'}
+  ],
+  questions:[
+    {q:'Ich ___ um sieben Uhr auf.', hint:'aufstehen', ja:'私は7時に起きる。', choices:['stehe','aufstehe','stehst'], a:'stehe', why:['前つづり auf はすでに文の最後にある','2番目には本体の stehe だけ']},
+    {q:'Der Zug ___ um 10 Uhr ab.', hint:'abfahren', ja:'電車は10時に出発する。', choices:['fährt','abfährt','fahren'], a:'fährt', why:['ab は文の最後','2番目は本体の fährt（主語は der Zug なので -t）']},
+    {q:'Wir kaufen im Supermarkt ___.', hint:'einkaufen', ja:'スーパーで買い物をする。', choices:['an','ein','aus'], a:'ein', why:['einkaufen の前つづりは ein','文の最後に置く']},
+    {q:'Rufst du mich morgen ___?', hint:'anrufen', ja:'明日電話してくれる？', choices:['an','auf','ab'], a:'an', why:['anrufen の前つづりは an','疑問文でも前つづりは最後']},
+    {q:'正しい文はどれ？', hint:'fernsehen', ja:'彼はテレビを見る。', choices:['Er sieht fern.','Er fernsieht.','Er sieht fernsehen.'], a:'Er sieht fern.', why:['本体 sieht が2番目','前つづり fern は文の最後'], long:true},
+    {q:'Es ist dunkel. Mach bitte das Licht ___.', hint:'anmachen', ja:'暗いね。電気をつけて。', choices:['an','ein','auf'], a:'an', why:['「つける」は anmachen','前つづり an が最後に来る']},
+    {q:'Der Kurs ___ um neun Uhr an.', hint:'anfangen', ja:'講座は9時に始まる。', choices:['fängt','anfängt','fangen'], a:'fängt', why:['an はすでに最後にある','2番目は本体 fängt（fangen は er で fängt になる）']},
+    {q:'Ich ___ dich am Bahnhof ab.', hint:'abholen', ja:'駅まで迎えに行くね。', choices:['hole','abhole','holst'], a:'hole', why:['ab は文の最後','2番目は本体の hole（主語 ich なので -e）']}
+  ]
+},
+{
+  id:'a1-09', lv:'a1', n:9, title:'助動詞', ex:'Ich kann schwimmen.',
+  intro:[
+    '「〜できる」「〜しなければならない」のように、動詞に意味を足すのが<b>助動詞</b>です。',
+    '助動詞が<b>2番目</b>に来て、もとの動詞は<b>辞書の形のまま文の最後</b>に置きます。'
+  ],
+  table:{head:['助動詞','意味','ich / er の形'], rows:[
+    ['können','〜できる','<b class="hl">kann</b>'],
+    ['müssen','〜しなければならない','<b class="hl">muss</b>'],
+    ['wollen','〜するつもり','<b class="hl">will</b>'],
+    ['dürfen','〜してもよい','<b class="hl">darf</b>'],
+    ['möchten','〜したい','<b class="hl">möchte</b>']
+  ]},
+  point:'助動詞は <b>ich と er が同じ形</b>（ich kann／er kann）。er に -t はつきません。du は -st（du kannst）です。',
+  examples:[
+    {de:'Ich <b class="hl">kann</b> gut <b class="hl">schwimmen</b>.', say:'Ich kann gut schwimmen.', ja:'私は上手に泳げる。'},
+    {de:'Du <b class="hl">musst</b> heute <b class="hl">arbeiten</b>.', say:'Du musst heute arbeiten.', ja:'君は今日働かなければならない。'},
+    {de:'Er <b class="hl">möchte</b> einen Kaffee <b class="hl">trinken</b>.', say:'Er möchte einen Kaffee trinken.', ja:'彼はコーヒーを飲みたい。'}
+  ],
+  questions:[
+    {q:'Ich ___ schwimmen.', hint:'können', ja:'私は泳げる。', choices:['kann','kannst','können'], a:'kann', why:['ich の können は kann']},
+    {q:'Du ___ heute arbeiten.', hint:'müssen', ja:'君は今日働かないといけない。', choices:['muss','musst','müssen'], a:'musst', why:['du の müssen は musst（-st がつく）']},
+    {q:'Er ___ einen Kaffee trinken.', hint:'möchten', ja:'彼はコーヒーを飲みたい。', choices:['möchte','möchtest','möchten'], a:'möchte', why:['助動詞は ich と er が同じ形','er → möchte（-t はつかない）']},
+    {q:'正しい文はどれ？', ja:'私はドイツ語を上手に話せる。', choices:['Ich kann gut Deutsch sprechen.','Ich kann gut Deutsch spreche.','Ich kann sprechen gut Deutsch.'], a:'Ich kann gut Deutsch sprechen.', why:['助動詞 kann が2番目','sprechen は辞書の形のまま文の最後'], long:true},
+    {q:'Hier ___ man nicht rauchen.', hint:'dürfen', ja:'ここではたばこを吸ってはいけない。', choices:['darf','darfst','dürfen'], a:'darf', why:['man は er と同じ扱い','助動詞の er の形 → darf']},
+    {q:'Wir ___ nach Berlin fahren.', hint:'wollen', ja:'私たちはベルリンに行くつもりだ。', choices:['will','wollen','wollt'], a:'wollen', why:['wir の形は辞書の形と同じ','→ wollen']},
+    {q:'Kannst du mir ___?', ja:'手伝ってくれる？', choices:['helfen','hilfst','hilft'], a:'helfen', why:['助動詞 kannst がある','もとの動詞は辞書の形 helfen で最後に']},
+    {q:'Er kann heute nicht ___.', ja:'彼は今日来られない。', choices:['kommt','kommen','kommst'], a:'kommen', why:['助動詞 kann がある','動詞は辞書の形 kommen']}
+  ]
+},
+{
+  id:'a1-10', lv:'a1', n:10, title:'所有冠詞', ex:'mein Bruder',
+  intro:[
+    '「私の」「君の」のような言葉を<b>所有冠詞</b>といいます。',
+    '語尾のつけ方は ein とまったく同じです。女性名詞には <b>-e</b>、男性名詞の4格には <b>-en</b> がつきます。'
+  ],
+  table:{head:['だれの','形'], rows:[
+    ['私の','mein'],['君の','dein'],['彼の','sein'],['彼女の','ihr'],['私たちの','unser'],['君たちの','euer'],['あなたの','Ihr（大文字）']
+  ]},
+  point:'「彼女の」と「あなたの」はどちらも ihr。大文字の <b>Ihr</b> が「あなたの」です。',
+  examples:[
+    {de:'Das ist <b class="hl">meine</b> Mutter.', say:'Das ist meine Mutter.', ja:'こちらは私の母です。（die Mutter → meine）'},
+    {de:'Ich besuche <b class="hl">meinen</b> Bruder.', say:'Ich besuche meinen Bruder.', ja:'兄を訪ねます。（男性の4格 → meinen）'},
+    {de:'Wie ist <b class="hl">Ihr</b> Name?', say:'Wie ist Ihr Name?', ja:'あなたのお名前は？'}
+  ],
+  questions:[
+    {q:'Das ist ___ Mutter.', hint:'私の', ja:'こちらは私の母です。', choices:['mein','meine','meinen'], a:'meine', why:['Mutter は女性名詞','女性には -e がつく → meine']},
+    {q:'Das ist ___ Vater.', hint:'私の', ja:'こちらは私の父です。', choices:['mein','meine','meinen'], a:'mein', why:['Vater は男性名詞で、ここは1格（〜です）','ein と同じく語尾なし → mein']},
+    {q:'Ist das ___ Handy?', hint:'君の', ja:'これは君の携帯？', choices:['dein','deine','deinen'], a:'dein', why:['Handy は中性名詞（das Handy）','中性は語尾なし → dein']},
+    {q:'Ich besuche ___ Bruder.', hint:'私の', ja:'私は兄を訪ねる。', choices:['mein','meine','meinen'], a:'meinen', why:['Bruder は男性名詞','「兄<b>を</b>訪ねる」なので4格','→ meinen']},
+    {q:'Anna und ___ Mann', hint:'彼女の', ja:'アンナと彼女の夫', choices:['sein','ihr','ihre'], a:'ihr', why:['「彼女の」は ihr','Mann は男性で1格 → 語尾なし ihr']},
+    {q:'Tom und ___ Schwester', hint:'彼の', ja:'トムと彼の妹', choices:['sein','seine','ihre'], a:'seine', why:['「彼の」は sein','Schwester は女性 → seine']},
+    {q:'Das ist ___ Haus.', hint:'私たちの', ja:'これは私たちの家です。', choices:['unser','unsere','unseren'], a:'unser', why:['「私たちの」は unser','Haus は中性 → 語尾なし']},
+    {q:'Wie ist ___ Adresse?', hint:'あなたの', ja:'あなたのご住所は？', choices:['Ihr','Ihre','Ihren'], a:'Ihre', why:['「あなたの」は大文字の Ihr','Adresse は女性 → Ihre']}
+  ]
+},
+{
+  id:'a1-11', lv:'a1', n:11, title:'命令形', ex:'Komm bitte!',
+  intro:[
+    '「〜して！」と頼む形です。相手が du（君）・ihr（君たち）・Sie（あなた）のどれかで形が変わります。',
+    'du への命令は、動詞から <b>-en を取るだけ</b>で、主語の du は言いません。丁寧に言う時は <b>bitte</b> をつけます。'
+  ],
+  table:{head:['相手','kommen','形の作り方'], rows:[
+    ['du','<b class="hl">Komm!</b>','-en を取る'],
+    ['ihr','<b class="hl">Kommt!</b>','ihr の形（-t）'],
+    ['Sie','<b class="hl">Kommen Sie!</b>','動詞＋Sie']
+  ]},
+  point:'du の形で e が i に変わる動詞（du liest・du hilfst）は、命令形でも i になります：<b>Lies!</b> <b>Hilf!</b> sein は特別で <b>Sei!／Seid!</b> です。',
+  examples:[
+    {de:'<b class="hl">Komm</b> bitte!', say:'Komm bitte!', ja:'来て！'},
+    {de:'<b class="hl">Nehmen Sie</b> bitte Platz!', say:'Nehmen Sie bitte Platz!', ja:'どうぞお座りください。'},
+    {de:'<b class="hl">Seid</b> bitte leise!', say:'Seid bitte leise!', ja:'（君たち）静かにして！'}
+  ],
+  questions:[
+    {q:'___ bitte!', hint:'du / kommen', ja:'来て！', choices:['Komm','Kommst','Kommen'], a:'Komm', why:['相手は du','kommen から -en を取る → Komm']},
+    {q:'___ Sie bitte Platz!', hint:'Sie / nehmen', ja:'どうぞお座りください。', choices:['Nimm','Nehmen','Nehmt'], a:'Nehmen', why:['相手は Sie','動詞の形はそのまま、うしろに Sie → Nehmen Sie']},
+    {q:'___ bitte leise!', hint:'ihr / sein', ja:'（君たち）静かにして！', choices:['Sei','Seid','Sind'], a:'Seid', why:['相手は ihr','sein は特別な形 → Seid']},
+    {q:'___ das Buch!', hint:'du / lesen', ja:'その本を読んで！', choices:['Les','Lies','Liest'], a:'Lies', why:['lesen は du liest（e → ie）','命令形も ie のまま → Lies']},
+    {q:'___ mir bitte!', hint:'du / helfen', ja:'手伝って！', choices:['Helf','Hilf','Hilfst'], a:'Hilf', why:['helfen は du hilfst（e → i）','命令形も i → Hilf']},
+    {q:'___ Sie bitte langsam!', hint:'Sie / sprechen', ja:'ゆっくり話してください。', choices:['Sprich','Sprechen','Sprecht'], a:'Sprechen', why:['相手は Sie','→ Sprechen Sie']},
+    {q:'___ das Fenster auf!', hint:'ihr / aufmachen', ja:'（君たち）窓を開けて！', choices:['Mach','Macht','Machen'], a:'Macht', why:['相手は ihr','ihr の形 macht を使う','前つづり auf は最後']},
+    {q:'___ nicht so laut!', hint:'du / sein', ja:'そんなに大声出さないで！', choices:['Sei','Bist','Seid'], a:'Sei', why:['相手は du','sein の du への命令は特別な形 → Sei']}
+  ]
+}
+];
+const GRAMMAR_LEVELS = [['a1','A1',11],['a2','A2',7],['b1','B1',6]];
+
+// ---------- 文法の記録 ----------
+let gram = {done:{}, last:null};
+try { gram = Object.assign(gram, JSON.parse(localStorage.getItem('wortschatz-grammar') || '{}')); } catch(e) {}
+function saveGram(){ try { localStorage.setItem('wortschatz-grammar', JSON.stringify(gram)); } catch(e) {} }
 
 // ---------- 保存 ----------
 let known = {}, settings = {};
@@ -439,7 +858,139 @@ function renderItems(){
     (listQuery ? '' : '<button class="reset" data-action="reset">このレベルの「覚えた」記録を消す</button>');
 }
 
+// ---------- コース選択 ----------
+let mode = 'home';
+const BACK = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>';
+const NEXT = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+const gTotal = () => GRAMMAR_LEVELS.reduce((s, l) => s + l[2], 0);
+function renderHome(){
+  const knownN = W.filter(w => known[key(w)]).length;
+  const doneN = Object.keys(gram.done).length;
+  const nextU = GRAMMAR.find(u => !gram.done[u.id]);
+  document.getElementById('home').innerHTML = `
+    <div>
+      <h1 class="home-title">Wortschatz</h1>
+      <div class="home-bars" aria-hidden="true"><span style="background:var(--der)"></span><span style="background:var(--die)"></span><span style="background:var(--das)"></span></div>
+      <p class="home-q">今日はどちらを学びますか？</p>
+    </div>
+    <button class="course" data-action="goVocab">
+      <span class="row1"><span>Wortschatz</span>${NEXT}</span>
+      <span><span class="name">単語コース</span><span class="desc">カード・クイズ・der/die/das で単語を覚える</span></span>
+      <span class="pills"><span>A1〜C1</span><span>${W.length.toLocaleString()}語</span><span>全単語に例文</span></span>
+      <span><span class="prog"><span>前回：${lv.toUpperCase()}</span><span>覚えた ${knownN.toLocaleString()}語</span></span><span class="pbar"><i style="width:${knownN / W.length * 100}%"></i></span></span>
+    </button>
+    <button class="course dark" data-action="goGrammar">
+      <span class="row1"><span>Grammatik</span>${NEXT}</span>
+      <span><span class="name">文法コース</span><span class="desc">「なぜそうなるか」から学ぶ説明と練習問題</span></span>
+      <span class="pills"><span>A1〜B1</span><span>${gTotal()}単元</span></span>
+      <span><span class="prog"><span>${nextU ? '次：第' + nextU.n + '課 ' + nextU.title : 'A1はすべて完了'}</span><span>${doneN} / ${gTotal()}単元</span></span><span class="pbar"><i style="width:${doneN / gTotal() * 100}%"></i></span></span>
+    </button>
+    <p class="home-note">それぞれのコースの中から、いつでもここに戻れます</p>`;
+}
+
+// ---------- 文法コース ----------
+let gLv = 'a1', gView = 'list', gUnit = null, gp = null;
+const unitOf = id => GRAMMAR.find(u => u.id === id);
+function renderGrammar(){
+  const el = document.getElementById('grammar');
+  el.innerHTML = gView === 'list' ? gList() : gView === 'lesson' ? gLesson() : gView === 'practice' ? gPractice() : gResult();
+}
+function gList(){
+  const units = GRAMMAR.filter(u => u.lv === gLv);
+  const lvInfo = GRAMMAR_LEVELS.find(l => l[0] === gLv);
+  const done = units.filter(u => gram.done[u.id] != null).length;
+  const next = units.find(u => gram.done[u.id] == null);
+  let body;
+  if (!units.length) body = `<div class="soon">${lvInfo[1]}（${lvInfo[2]}単元）は準備中です。</div>`;
+  else body = (next ? `<div class="next-card">
+      <small>${done ? '次はここから' : 'ここから始めましょう'}　第${next.n}課</small>
+      <h2>${next.title}</h2>
+      <p class="de">${next.ex}</p>
+      <button class="btn" data-action="gOpen" data-id="${next.id}">${done ? '続きから始める' : '始める'}</button>
+    </div>` : '') +
+    `<h3 style="margin:6px 0 0;font-size:.9rem;color:var(--muted)">${lvInfo[1]}の単元</h3>` +
+    units.map(u => {
+      const sc = gram.done[u.id];
+      return `<button class="unit" data-action="gOpen" data-id="${u.id}">
+        <span class="num">${u.n}</span>
+        <span class="tx"><b>${u.title}</b><span>${u.ex}</span></span>
+        <span class="mark ${sc != null ? 'ok' : ''}">${sc != null ? sc + '/8' : ''}</span>
+      </button>`;
+    }).join('');
+  return `<button class="g-back" data-action="goHome">${BACK}コース選択</button>
+    <div class="g-head"><h1>Grammatik</h1><span>${lvInfo[1]}：${done} / ${lvInfo[2]}単元</span></div>
+    <div class="seg">${GRAMMAR_LEVELS.map(([k, l]) => `<button data-action="gLv" data-glv="${k}" aria-pressed="${k === gLv}">${l}</button>`).join('')}</div>
+    <div class="gbar"><i style="width:${done / lvInfo[2] * 100}%"></i></div>
+    ${body}`;
+}
+function stepsHTML(n){
+  return `<div class="steps">${['説明','例文','練習'].map((s, i) => `<div class="${i < n ? 'on' : ''}"><i></i>${i + 1} ${s}</div>`).join('')}</div>`;
+}
+function gLesson(){
+  const u = unitOf(gUnit);
+  const tb = u.table ? `<div class="tablewrap"><table class="gtable"><thead><tr>${u.table.head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${u.table.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>` : '';
+  return `<button class="g-back" data-action="gList">${BACK}単元の一覧</button>
+    <div class="g-head"><h1 style="font-family:inherit;font-weight:800">${u.title}</h1><span>${u.lv.toUpperCase()} 第${u.n}課</span></div>
+    ${stepsHTML(2)}
+    <section class="gcard"><h2>しくみ</h2>${u.intro.map(p => `<p>${p}</p>`).join('')}</section>
+    <section class="gcard"><h2>形のまとめ</h2>${tb}<div class="point">${u.point}</div>
+      ${u.hints ? `<p style="font-weight:700;margin-top:4px">見分けるヒント</p><ul class="hints">${u.hints.map(h => `<li>${h}</li>`).join('')}</ul>` : ''}</section>
+    <section class="gcard"><h2>例文で確かめる</h2>
+      ${u.examples.map(x => `<div class="gex"><div class="tx"><p class="de">${x.de}</p><p class="ja2">${x.ja}</p></div><button class="round" data-action="speak" data-text="${esc(x.say)}" aria-label="発音を聞く">🔊</button></div>`).join('')}
+    </section>
+    <button class="btn primary full" data-action="gStart">練習問題へ進む（${u.questions.length}問）</button>`;
+}
+function startPractice(){
+  const u = unitOf(gUnit);
+  gp = { queue: u.questions.map((q, i) => ({i, retry: false, choices: shuffle(q.choices)})), pos: 0, picked: null, first: u.questions.map(() => null) };
+}
+function gPractice(){
+  const u = unitOf(gUnit), it = gp.queue[gp.pos], q = u.questions[it.i];
+  const done = gp.picked !== null, right = done && gp.picked === q.a;
+  const segs = u.questions.map((_, i) => `<i class="${gp.first[i] === true ? 'ok' : gp.first[i] === false ? 'ng' : i === it.i ? 'cur' : ''}"></i>`).join('');
+  const blank = q.q.includes('___');
+  const qtext = blank ? q.q.replace('___', done ? `<span class="blank">${q.a}</span>` : '<span class="blank">&nbsp;</span>') : '';
+  return `<button class="g-back" data-action="gBackLesson">${BACK}説明に戻る</button>
+    <div class="g-head"><span>${it.retry ? 'もう一度チャレンジ' : '問題 ' + (it.i + 1) + ' / ' + u.questions.length}</span><span>${u.title}</span></div>
+    <div class="qbar" style="grid-template-columns:repeat(${u.questions.length},1fr)">${segs}</div>
+    <section class="qcard">
+      <span class="lead">${blank ? '空欄に入る形を選んでください' : '正しい文を選んでください'}${q.hint ? '（' + q.hint + '）' : ''}</span>
+      ${blank ? `<p class="qde de">${qtext}</p>` : ''}
+      <span style="color:var(--muted)">${q.ja}</span>
+    </section>
+    <div class="qchoices ${q.long ? 'long' : ''}">
+      ${it.choices.map(c => {
+        const cls = done && c === q.a ? 'ok' : done && c === gp.picked ? 'ng' : '';
+        return `<button class="qc ${cls}" data-action="gPick" data-c="${esc(c)}" ${done ? 'disabled' : ''}>${c}</button>`;
+      }).join('')}
+    </div>
+    ${done ? `<section class="gcard fb">
+      <span class="ttl ${right ? 'ok' : 'ng'}">${right ? '正解！' : '惜しい！正解は ' + q.a}</span>
+      <ol>${q.why.map(w => `<li>${w}</li>`).join('')}</ol>
+      ${!right && !it.retry ? '<span style="font-size:.82rem;color:var(--muted)">この問題は、最後にもう一度出てきます。</span>' : ''}
+    </section>
+    <button class="btn primary full" data-action="gNext">${gp.pos + 1 < gp.queue.length ? '次の問題' : '結果を見る'}</button>` : ''}`;
+}
+function gResult(){
+  const u = unitOf(gUnit);
+  const score = gp.first.filter(x => x === true).length, total = u.questions.length;
+  const next = GRAMMAR.find(x => x.lv === u.lv && x.n === u.n + 1);
+  const msg = score === total ? 'パーフェクト！' : score >= total - 2 ? 'よくできました！' : 'もう一度説明を読んで、再挑戦してみましょう。';
+  return `<button class="g-back" data-action="gList">${BACK}単元の一覧</button>
+    <section class="gcard result">
+      <span style="color:var(--muted)">第${u.n}課 ${u.title}</span>
+      <p class="big">${score} / ${total}</p>
+      <span>${msg}</span>
+      <span style="font-size:.82rem;color:var(--muted)">最初の答えで正解した数です。この単元に完了のしるしがつきました。</span>
+    </section>
+    ${next ? `<button class="btn primary full" data-action="gOpen" data-id="${next.id}">次の単元へ：${next.title}</button>` : '<button class="btn primary full" data-action="gList">単元の一覧へ</button>'}
+    <button class="btn full" data-action="gStart">もう一度練習する</button>`;
+}
+
 function render(){
+  document.body.dataset.mode = mode;
+  if (mode === 'home') { renderHome(); window.scrollTo(0, 0); return; }
+  if (mode === 'grammar') { renderGrammar(); return; }
   renderTop();
   setTimeout(refreshEx, 0);
   if (tab === 'card') renderCard();
@@ -458,6 +1009,34 @@ document.addEventListener('click', e => {
   if (t.dataset.cat) { cat = t.dataset.cat; listQuery = ''; resetModes(); return render(); }
   const a = t.dataset.action;
   if (a === 'speak') return say(t.dataset.text);
+  if (a === 'goHome') { mode = 'home'; return render(); }
+  if (a === 'goVocab') { mode = 'vocab'; buildDeck(); window.scrollTo(0, 0); return render(); }
+  if (a === 'goGrammar') { mode = 'grammar'; gView = 'list'; window.scrollTo(0, 0); return render(); }
+  if (a === 'gLv') { gLv = t.dataset.glv; return render(); }
+  if (a === 'gList') { gView = 'list'; window.scrollTo(0, 0); return render(); }
+  if (a === 'gOpen') { gUnit = t.dataset.id; gram.last = gUnit; saveGram(); gView = 'lesson'; window.scrollTo(0, 0); return render(); }
+  if (a === 'gBackLesson') { gView = 'lesson'; window.scrollTo(0, 0); return render(); }
+  if (a === 'gStart') { startPractice(); gView = 'practice'; window.scrollTo(0, 0); return render(); }
+  if (a === 'gPick') {
+    const u = unitOf(gUnit), it = gp.queue[gp.pos], q = u.questions[it.i];
+    gp.picked = t.dataset.c;
+    const right = gp.picked === q.a;
+    if (gp.first[it.i] === null) gp.first[it.i] = right;
+    if (!right && !it.retry) gp.queue.push({i: it.i, retry: true, choices: shuffle(q.choices)});
+    const spoken = q.q.includes('___') && !/[ぁ-んァ-ヶ一-龯]/.test(q.q) ? q.q.replace('___', q.a).replace(/ – /g, '. ') : (q.long ? q.a : '');
+    if (spoken) say(spoken);
+    return render();
+  }
+  if (a === 'gNext') {
+    gp.pos++; gp.picked = null;
+    if (gp.pos >= gp.queue.length) {
+      const u = unitOf(gUnit), score = gp.first.filter(x => x === true).length;
+      gram.done[u.id] = Math.max(score, gram.done[u.id] || 0); saveGram();
+      gView = 'result';
+    }
+    window.scrollTo(0, 0); return render();
+  }
+
   if (a === 'flip') { flipped = !flipped; renderCard(); return refreshEx(); }
   if (a === 'makeEx') { const w = currentWord(); if (w) makeEx(w); return; }
   if (a === 'known' || a === 'again') {
@@ -502,7 +1081,6 @@ render();
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
 }
-// ホーム画面のアプリでは「覚えた」の記録を消されにくくする
 try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch(e) {}
 </script>
 </body>
